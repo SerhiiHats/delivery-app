@@ -1,11 +1,24 @@
 import React from 'react';
 import style from "./pagesStyle.module.scss";
+import constBd from "../utils/constBd";
+import {Link} from "react-router-dom";
 
 const ShopsPage = () => {
+
+
+  let listRestaurants = "";
+  for (const key in constBd) {
+    listRestaurants += <Link key={key} to={key}>{key}</Link>
+    console.log(constBd[key].name)
+  }
+
   return (
     <div className={style.shops}>
-      <h1>Shops Page </h1>
-      <p>This is a Shops page with React-router-dom library</p>
+      <div className={style.containerRestaurants}>Shops:
+        {listRestaurants}
+      </div>
+
+      <div className={style.containerProducts}>Product</div>
     </div>
   );
 };
