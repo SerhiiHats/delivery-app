@@ -1,0 +1,5 @@
+@import "./src/index";
+
+.main {
+  min-height: calc(100vh - $heightHeader - $heightFooter);
+}

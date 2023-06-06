@@ -1,0 +1,20 @@
+import React from 'react';
+import "./Layout.scss";
+import {Outlet} from "react-router-dom";
+import '../index.scss';
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+
+const Layout = () => {
+  return (
+    <>
+      <Header/>
+      <main className={"main"}>
+        <Outlet/>
+      </main>
+      <Footer/>
+    </>
+  );
+};
+
+export default Layout;

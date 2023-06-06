@@ -1,0 +1,35 @@
+@import "./src/index";
+
+.header {
+  box-sizing: border-box;
+  height: $heightHeader;
+  background-color: $colorBg;
+  text-align: left;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  & > a {
+    color: $colorDefault;
+    margin: $size * 5;
+    font-size: $size * 2;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & > .active {
+    color: $colorActive2;
+
+    cursor: default;
+  }
+
+  .border {
+    display: inline-block;
+    height: $size * 4.5;
+    border-right: 2px solid $colorDefault;
+  }
+}
+

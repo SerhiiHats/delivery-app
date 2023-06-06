@@ -1,0 +1,11 @@
+@import "./src/index";
+
+.footer {
+  box-sizing: border-box;
+  height: $heightFooter;
+  padding-top: calc($heightFooter / 3);
+  background-color: $colorBg;
+  text-align: center;
+  color: $colorDefault;
+  font-size: $size * 2;
+}
