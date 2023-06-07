@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./pagesStyle.scss";
 import constBd from "../utils/constBd";
 import {Link} from "react-router-dom";
 
 const ShopsPage = () => {
   const [product, setProduct] = useState(null);
-  // const [styleId, setStyleId] = useState(null);
+
+  useEffect(()=>{
+    console.log("count for constBd[0].name")
+    setProduct(constBd[0].name)
+  },[])
 
   const handleCheckRestaurant = (e) =>{
     setProduct(e.target.id);
-
   };
 
   const listRestaurants = constBd.map(item =>{
