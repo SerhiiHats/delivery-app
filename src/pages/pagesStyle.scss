@@ -2,6 +2,7 @@
 
 $widthContainerRestaurants: $size * 30;
 
+
 .cart {
   color: #ff7f7f;
   padding: 20px;
@@ -25,6 +26,35 @@ $widthContainerRestaurants: $size * 30;
     align-items: center;
     padding: $size;
     box-sizing: border-box;
+
+
+    .normal {
+      color: black;
+      border: $size * 0.1 solid $colorActive2;
+      border-radius: 8px;
+      width: $size * 15;
+      padding: $size 0;
+      text-align: center;
+      transition: 0.2s;
+
+      &:hover {
+        scale: 1.05;
+        box-shadow: 0 0 7px 1px $colorDefault;
+      }
+
+    }
+
+    & > .active {
+      background-color: $colorActive2;
+      color: white;
+      font-weight: bold;
+
+      &:hover {
+        scale: none;
+        box-shadow: none;
+      }
+    }
+
   }
 
   .containerProducts {

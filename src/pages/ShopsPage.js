@@ -1,24 +1,30 @@
-import React from 'react';
-import style from "./pagesStyle.module.scss";
+import React, {useState} from 'react';
+import "./pagesStyle.scss";
 import constBd from "../utils/constBd";
 import {Link} from "react-router-dom";
 
 const ShopsPage = () => {
+  const [product, setProduct] = useState(null);
+  // const [styleId, setStyleId] = useState(null);
 
+  const handleCheckRestaurant = (e) =>{
+    setProduct(e.target.id);
 
-  let listRestaurants = "";
-  for (const key in constBd) {
-    listRestaurants += <Link key={key} to={key}>{key}</Link>
-    console.log(constBd[key].name)
-  }
+  };
+
+  const listRestaurants = constBd.map(item =>{
+    return(<p className={item.name === product ? "active normal" : "normal"} onClick={(e)=>handleCheckRestaurant(e)} id={item.name} key={item.name} to={item.name}>{item.name}</p>)
+  })
 
   return (
-    <div className={style.shops}>
-      <div className={style.containerRestaurants}>Shops:
+    <div className={"shops"}>
+      <div className={"containerRestaurants"}>Shops:
         {listRestaurants}
       </div>
 
-      <div className={style.containerProducts}>Product</div>
+      <div className={"containerProducts"}>
+        {product}
+      </div>
     </div>
   );
 };

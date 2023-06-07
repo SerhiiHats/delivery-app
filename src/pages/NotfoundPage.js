@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./pagesStyle.module.scss";
+import style from "./pagesStyle.scss";
 import {Link} from "react-router-dom";
 
 const NotfoundPage = () => {
