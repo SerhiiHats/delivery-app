@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./pagesStyle.scss";
 import constBd from "../utils/constBd";
 import {Link} from "react-router-dom";
+import CardProduct from "../components/CardProduct/CardProduct";
 
 const ShopsPage = () => {
   const [nikUse, setNikUse] = useState(null);
@@ -27,10 +28,8 @@ const ShopsPage = () => {
       </div>
       <div className={"containerProducts"}>
         {nikUse}
-
         <div>
-         <img width={500} src={require("../assets/img/best_sushi/black.jpg")} alt={"ddd"} title={"sdsd"}/>
-          {products && products.map(item=><img key={item.id} id={item.id} width={500} src={require(`../assets/${item.image}`)} alt={item.title} title={item.description}/>)}
+        {products &&products.map(item=> <CardProduct key={item.id} id={item.id}src={require(`../assets/${item.image}`)} alt={item.title} title={item.title}/>)}
         </div>
 
       </div>
