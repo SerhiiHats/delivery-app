@@ -4,19 +4,46 @@ import constBd from "../utils/constBd";
 import {Link} from "react-router-dom";
 
 const ShopsPage = () => {
+  const [nikUse, setNikUse] = useState(null);
   const [product, setProduct] = useState(null);
+  // const src = require("../assets/img/best_sushi/black.jpg");
+
+  let listProducts = null;
 
   useEffect(()=>{
-    console.log("count for constBd[0].name")
-    setProduct(constBd[0].name)
+    console.log("count for constBd[0].nameRestaurant")
+    setNikUse(constBd[0].nik)
+    // setNikUse(constBd[0].product)
   },[])
 
+  useEffect(()=>{
+    console.log("change nikUse")
+    // if(nikUse){
+    //   const tempRestaurant = constBd.filter(item => item.nik === nikUse);
+    //   console.log(tempRestaurant)
+    // }
+
+  //   tempRestaurant[0].product && console.log(tempRestaurant[0].product)
+  //
+  //   listProducts = tempRestaurant[0].product && tempRestaurant[0]?.product?.map(item =>{
+  //     console.log(item.id + " : " +item.image)
+  //
+  //
+  //     setProduct2(tempRestaurant)
+  //     // return(
+  //     //   <img key={item.id} id={item.id} width={500} src={require(`../assets/${item.image}`)} alt={item.title} title={item.description}/>
+  //     // )
+  //     // console.log(listProducts)
+  // });
+
+  },[]);
+
   const handleCheckRestaurant = (e) =>{
-    setProduct(e.target.id);
+    setNikUse(e.target.id);
   };
 
   const listRestaurants = constBd.map(item =>{
-    return(<p className={item.name === product ? "active normal" : "normal"} onClick={(e)=>handleCheckRestaurant(e)} id={item.name} key={item.name} to={item.name}>{item.name}</p>)
+    return(<p className={item.nik === nikUse ? "active normal" : "normal"} onClick={(e)=>handleCheckRestaurant(e)} id={item.nik} key={item.nik}>{item.nameRestaurant}</p>)
   })
 
   return (
@@ -26,7 +53,14 @@ const ShopsPage = () => {
       </div>
 
       <div className={"containerProducts"}>
-        {product}
+        {nikUse}
+
+        <div>
+          {/*{listProducts &&{listProducts}}*/}
+         {/*<img width={500} src={require("../assets/img/best_sushi/black.jpg")} alt={"ddd"} title={"sdsd"}/>*/}
+          {/*<img src={"."} alt={"ddd"} title={"sdsd"}/>*/}
+        </div>
+
       </div>
     </div>
   );
