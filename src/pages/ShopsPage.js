@@ -9,18 +9,15 @@ const ShopsPage = () => {
   const [products, setProducts] = useState(null);
 
   useEffect(()=>{
-    console.log("count for constBd[0].nameRestaurant")
+    console.log("count for constBd[0].nameRestaurant");
     setNikUse(constBd[0].nik);
-    setProducts(constBd[0].product)
+    setProducts(constBd[0].product);
     },[]);
 
   const handleCheckRestaurant = (e) =>{
     setNikUse(e.target.id);
-    console.log(e.target.id)
-    console.log(constBd.filter(item => item.nik === e.target.id))
-    const tempArr = constBd.filter(item => item.nik === e.target.id)
-    setProducts(tempArr[0].product)
-    console.log(tempArr[0].product)
+    const tempArr = constBd.filter(item => item.nik === e.target.id);
+    setProducts(tempArr[0].product)  ;
   };
 
   const listRestaurants = constBd.map(item =>{
