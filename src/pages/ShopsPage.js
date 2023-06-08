@@ -8,20 +8,21 @@ const ShopsPage = () => {
   const [nikUse, setNikUse] = useState(null);
   const [products, setProducts] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("count for constBd[0].nameRestaurant");
     setNikUse(constBd[0].nik);
     setProducts(constBd[0].product);
-    },[]);
+  }, []);
 
-  const handleCheckRestaurant = (e) =>{
+  const handleCheckRestaurant = (e) => {
     setNikUse(e.target.id);
     const tempArr = constBd.filter(item => item.nik === e.target.id);
-    setProducts(tempArr[0].product)  ;
+    setProducts(tempArr[0].product);
   };
 
-  const listRestaurants = constBd.map(item =>{
-    return(<p className={item.nik === nikUse ? "active normal" : "normal"} onClick={(e)=>handleCheckRestaurant(e)} id={item.nik} key={item.nik}>{item.nameRestaurant}</p>)
+  const listRestaurants = constBd.map(item => {
+    return (<p className={item.nik === nikUse ? "active normal" : "normal"} onClick={(e) => handleCheckRestaurant(e)}
+               id={item.nik} key={item.nik}>{item.nameRestaurant}</p>)
   })
   return (
     <div className={"shops"}>
@@ -31,7 +32,10 @@ const ShopsPage = () => {
       <div className={"containerProducts"}>
         {nikUse}
         <div className={"wrapProducts"}>
-        {products &&products.map(item=> <CardProduct key={item.id} id={item.id}src={require(`../assets/${item.image}`)} alt={item.title} name={item.title} title={item.description}/>)}
+          {products && products.map(item => <CardProduct key={item.id} id={item.id}
+                                                         src={require(`../assets/${item.image}`)} alt={item.title}
+                                                         name={item.title} title={item.description}
+                                                         price={item.price}/>)}
         </div>
 
       </div>
