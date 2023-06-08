@@ -28,8 +28,8 @@ const ShopsPage = () => {
       </div>
       <div className={"containerProducts"}>
         {nikUse}
-        <div>
-        {products &&products.map(item=> <CardProduct key={item.id} id={item.id}src={require(`../assets/${item.image}`)} alt={item.title} title={item.title}/>)}
+        <div className={"wrapProducts"}>
+        {products &&products.map(item=> <CardProduct key={item.id} id={item.id}src={require(`../assets/${item.image}`)} alt={item.title} name={item.title} title={item.description}/>)}
         </div>
 
       </div>

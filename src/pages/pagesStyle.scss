@@ -64,6 +64,13 @@ $widthContainerRestaurants: $size * 30;
     padding: $size;
     box-sizing: border-box;
   }
+
+  .wrapProducts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
 }
 
 .notFound {
