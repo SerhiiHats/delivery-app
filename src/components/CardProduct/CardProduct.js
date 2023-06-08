@@ -11,7 +11,7 @@ const CardProduct = (props) => {
         <img src={src} alt={alt} title={title}/>
         <h2 className={styles.titleProduct}>{name}</h2>
         <div className={styles.wrapBtnAddCart}>
-          <p><span>{price}</span><span> грн.</span></p>
+          <p className={styles.wrapPrice}><span>{price}</span><span> грн.</span></p>
           <button className={styles.btnAddCart}>Add to Cart</button>
         </div>
 

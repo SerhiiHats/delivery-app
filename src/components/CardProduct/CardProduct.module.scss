@@ -3,9 +3,11 @@
 .cardProduct {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: $size * 1.5;
   margin: $size * 1.5 0 $size * 2.5 0;
   max-width: $size * 39;
+  background-color: $colorDefault3;
+  border-radius: $size;
 
   .wrapImage {
     & > img {
@@ -26,6 +28,15 @@
 
     .wrapBtnAddCart {
       text-align: right;
+      display: flex;
+      justify-content: space-between;
+
+
+      .wrapPrice {
+        color: $colorActive4;
+        font-weight: bold;
+        font-size: $size * 1.7;
+      }
 
       .btnAddCart {
         width: $size * 17;
