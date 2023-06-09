@@ -1,13 +1,8 @@
-import React, {useState} from 'react';
 import styles from "./CardProduct.module.scss"
 
 const CardProduct = (props) => {
-  // const [quantity, setQuantity] = useState(0);
 
   const {description, idProduct, image, price, title, idRestaurant} = props;
-
-  // console.log(idRestaurant)
-  // console.log(props)
 
   const imageSrc = require(`../../assets/${image}`);
   const userOrder = [{
@@ -20,62 +15,33 @@ const CardProduct = (props) => {
   const putToCart = () => {
     const userOrderAppDelivery = localStorage.getItem("userOrderAppDelivery");
 
-    console.log(userOrderAppDelivery)
-
     if (!userOrderAppDelivery) {
       localStorage.setItem("userOrderAppDelivery", JSON.stringify(userOrder));
+      const test5 = localStorage.getItem("userOrderAppDelivery");
+      console.log(JSON.parse(test5))
       return;
     }
 
+    const allProductOfUserOrder = JSON.parse(userOrderAppDelivery);
+    let presentProductOfOrder = false;
 
-    if (userOrderAppDelivery) {
-      const allUserOrder = JSON.parse(userOrderAppDelivery);
-      console.log(allUserOrder)
-
-      const allProducts = allUserOrder.filter(item => item.idRestaurant === idProduct);
-      console.log(allProducts)
-
-      const isExist =allProducts.find(item => item.idProduct === idProduct);
-      console.log(isExist)
-
-      if(isExist){
-        allProducts.forEach(item => {
-
-          if (item.idProduct === idProduct){
-            item.quantity = item.quantity + 1;
-          }
-
-        });
-
-        localStorage.setItem(userOrderAppDelivery)
-      }else {
-
-        localStorage.setItem("userOrderAppDelivery", JSON.stringify())
+    allProductOfUserOrder.forEach(item => {
+      if (item.idRestaurant === idRestaurant && item.idProduct === idProduct) {
+        item.quantity += 1;
+        presentProductOfOrder = true;
+        localStorage.setItem("userOrderAppDelivery", JSON.stringify(allProductOfUserOrder));
       }
+    });
 
-
-      console.log(isExist);
-
-
-
-
-      console.log(allProducts)
-
-
-
-
-
+    if (!presentProductOfOrder) {
+      const margeOfProduct = allProductOfUserOrder.concat(userOrder);
+      localStorage.setItem("userOrderAppDelivery", JSON.stringify(margeOfProduct));
     }
 
-    // setQuantity(quantity + 1);
-    userOrder.forEach(elem => {
-      console.log("idRestaurant: " + elem.idRestaurant)
-      console.log("idProduct: " + elem.idProduct)
-      console.log("price: " + elem.price)
-      console.log("quantity: " + elem.quantity)
-    })
-
+    const test1 = localStorage.getItem("userOrderAppDelivery");
+    console.log(JSON.parse(test1))
   }
+
 
   return (
     <div className={styles.cardProduct} id={idProduct} key={idProduct}>
@@ -93,12 +59,12 @@ const CardProduct = (props) => {
           {/*  : `${styles.btnAddCart}`}>{quantity ? "In the Cart" : "Add to Cart"}</button>*/}
 
 
-          <button onClick={putToCart} className={styles.btnAddCart}>{"Add to Cart"}</button>
+          <button onClick={() => putToCart()} className={styles.btnAddCart}>{"Add to Cart"}</button>
         </div>
 
       </div>
     </div>
-  );
+  )
 };
 
 export default CardProduct;
