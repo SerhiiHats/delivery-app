@@ -40,7 +40,7 @@ const CartPage = () => {
 
       <div className={style.containerCart}>
         <div className={style.cart}>
-          Cart is empty
+          {/*Cart is empty*/}
         </div>
         <div className={style.wrapBtn}>
           <p>Total price: <span>999</span> грн.</p>
