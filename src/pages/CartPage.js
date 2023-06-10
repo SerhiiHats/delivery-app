@@ -2,16 +2,15 @@ import React from 'react';
 import style from "./CartPage.module.scss"
 import useInput from "../components/hooks/useInput";
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const inputName = useInput("");
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const inputEmail = useInput("");
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const inputPhone = useInput("");
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const inputAddress = useInput("");
+
 
 const CartPage = () => {
+
+  const inputName = useInput("");
+  const inputEmail = useInput("");
+  const inputPhone = useInput("");
+  const inputAddress = useInput("");
+
   return (
     <div className={style.wrapCart}>
       <div className={style.containerForm}>
