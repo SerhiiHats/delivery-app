@@ -1,0 +1,48 @@
+@import "./src/index";
+
+.wrapCart {
+  padding: $size * 2;
+  display: flex;
+  justify-content: space-between;
+
+  .containerForm {
+    width: calc(100% / 2 - $size);
+    min-height: 500px;
+    border: 1px solid $colorActive;
+    border-radius: 5px;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      padding: $size * 2;
+
+      label {
+        text-align: left;
+        //width: 100%;
+        font-weight: bold;
+        margin-bottom: $size * 2;
+
+        input {
+          display: block;
+          width: 80%;
+          height: 36px;
+          font-size: 12px;
+          border-radius: 5px;
+          border: 1px solid $colorDefault4;
+        }
+      }
+
+
+    }
+
+
+  }
+
+  .cart {
+    width: calc(100% / 2 - $size);
+    min-height: 500px;
+    border: 1px solid $colorActive2;
+    border-radius: 5px;
+  }
+
+}

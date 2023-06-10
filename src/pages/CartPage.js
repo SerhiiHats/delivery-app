@@ -1,14 +1,51 @@
 import React from 'react';
-import style from "./pagesStyle.scss";
+import style from "./CartPage.module.scss"
+import useInput from "../components/hooks/useInput";
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const inputName = useInput("");
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const inputEmail = useInput("");
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const inputPhone = useInput("");
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const inputAddress = useInput("");
 
 const CartPage = () => {
   return (
-    <div className={"cart"}>
-      <h1>Cart page</h1>
-      <p>This is a Cart page React-router-dom library</p>
+    <div className={style.wrapCart}>
+      <div className={style.containerForm}>
+        <form id={"formAuth"} className={style.form}>
 
-    </div>
-  );
+          <label>Name:
+            <input type={"text"} {...inputName}/>
+          </label>
+
+          <label>Email:
+            <input type={"text"} {...inputEmail}/>
+          </label>
+
+          <label>Phone:
+            <input type={"text"} {...inputPhone}/>
+          </label>
+
+          <label> Address:
+            <input type={"text"} {...inputAddress}/>
+          </label>
+
+        </form>
+
+        {/*<p>{JSON.stringify(requestForm) === "false" ? "No request" : JSON.stringify(requestForm)}</p>*/
+        }
+      </div>
+
+
+      <div className={style.cart}>
+
+      </div>
+
+    </div>)
+    ;
 };
 
 export default CartPage;
