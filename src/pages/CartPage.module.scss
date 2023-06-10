@@ -4,10 +4,11 @@
   padding: $size * 2;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 
   .containerForm {
     width: calc(100% / 2 - $size);
-    min-height: 500px;
+    min-height: 400px;
     border: 1px solid $colorActive;
     border-radius: 5px;
 
@@ -38,11 +39,47 @@
 
   }
 
-  .cart {
+  .containerCart {
     width: calc(100% / 2 - $size);
-    min-height: 500px;
-    border: 1px solid $colorActive2;
-    border-radius: 5px;
+
+    .cart {
+      border: 1px solid $colorActive2;
+      border-radius: 5px;
+      min-height: 500px;
+      padding: $size * 2;
+
+    }
+
+    .wrapBtn {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      margin-top: $size * 2;
+      font-weight: bold;
+
+      p {
+        margin: 0;
+        padding: 0;
+        color: $colorActive;
+        font-size: 20px;
+
+      }
+
+      button {
+        width: $size * 20;
+        padding: $size 0;
+        background-color: $colorActive2;
+        color: $colorWhite;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin-left: $size * 18;
+        font-weight: bold;
+
+      }
+    }
+
   }
+
 
 }

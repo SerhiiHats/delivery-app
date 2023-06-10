@@ -3,7 +3,6 @@ import style from "./CartPage.module.scss"
 import useInput from "../components/hooks/useInput";
 
 
-
 const CartPage = () => {
 
   const inputName = useInput("");
@@ -39,8 +38,14 @@ const CartPage = () => {
       </div>
 
 
-      <div className={style.cart}>
-
+      <div className={style.containerCart}>
+        <div className={style.cart}>
+          Cart is empty
+        </div>
+        <div className={style.wrapBtn}>
+          <p>Total price: <span>999</span> грн.</p>
+          <button>Submit</button>
+        </div>
       </div>
 
     </div>)
