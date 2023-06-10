@@ -61,9 +61,11 @@
           width: calc(100% / 2);
           border: 1px solid $colorDefault;
           text-align: center;
+          padding: 10px 0;
 
           img{
             width: 50%;
+            border-radius: 5px;
             //height: 100vh;
           }
         }
