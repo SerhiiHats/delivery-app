@@ -47,6 +47,51 @@
       min-height: 40vh;
       max-height: 65vh;
       padding: $size * 2;
+      overflow: auto;
+
+      .wrapProduct{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $colorDefault;
+        border-radius: 5px;
+
+
+        .wrapImg{
+          width: calc(100% / 2);
+          border: 1px solid $colorDefault;
+          text-align: center;
+
+          img{
+            width: 50%;
+            //height: 100vh;
+          }
+        }
+
+        .wrapDescriptionProduct{
+          width: calc(100% / 2 - 10px);
+          border: 1px solid $colorDefault;
+
+          .titleProduct{
+            text-align: center;
+          }
+
+          .priceProduct{
+            text-align: center;
+          }
+
+          .wrapTotalPrice{
+            display: flex;
+            justify-content: space-between;
+
+            .wrapButton{
+              margin-left: 100px;
+            }
+          }
+        }
+
+
+      }
     }
 
     .wrapBtn {

@@ -41,6 +41,59 @@ const CartPage = () => {
       <div className={style.containerCart}>
         <div className={style.cart}>
           {/*Cart is empty*/}
+          <div className={style.wrapProduct}>
+            <div className={style.wrapImg}>
+              <img src={require(`../assets/img/best_sushi/azhi.jpg`)} alt={"test"} title={"test2"}/>
+            </div>
+            <div className={style.wrapDescriptionProduct}>
+              <p className={style.titleProduct}>title</p>
+              <p className={style.priceProduct}>price</p>
+              <div className={style.wrapTotalPrice}>
+                <span className={style.wrapButton}><button>-</button> 1 <button>+</button></span>
+                <span>totalPrice</span></div>
+            </div>
+          </div>
+
+          <div className={style.wrapProduct}>
+            <div className={style.wrapImg}>
+              <img src={require(`../assets/img/best_sushi/black.jpg`)} alt={"test"} title={"test2"}/>
+            </div>
+            <div className={style.wrapDescriptionProduct}>
+              <p className={style.titleProduct}>title</p>
+              <p className={style.priceProduct}>price</p>
+              <div className={style.wrapTotalPrice}>
+                <span className={style.wrapButton}><button>-</button> 1 <button>+</button></span>
+                <span>totalPrice</span></div>
+            </div>
+          </div>
+
+          <div className={style.wrapProduct}>
+            <div className={style.wrapImg}>
+              <img src={require(`../assets/img/best_sushi/nisuaz.jpg`)} alt={"test"} title={"test2"}/>
+            </div>
+            <div className={style.wrapDescriptionProduct}>
+              <p className={style.titleProduct}>title</p>
+              <p className={style.priceProduct}>price</p>
+              <div className={style.wrapTotalPrice}>
+                <span className={style.wrapButton}><button>-</button> 1 <button>+</button></span>
+                <span>totalPrice</span></div>
+            </div>
+          </div>
+
+
+          <div className={style.wrapProduct}>
+            <div className={style.wrapImg}>
+              <img src={require(`../assets/img/best_sushi/fresh.jpg`)} alt={"test"} title={"test2"}/>
+            </div>
+            <div className={style.wrapDescriptionProduct}>
+              <p className={style.titleProduct}>title</p>
+              <p className={style.priceProduct}>price</p>
+              <div className={style.wrapTotalPrice}>
+                <span className={style.wrapButton}><button>-</button> 1 <button>+</button></span>
+                <span>totalPrice</span></div>
+            </div>
+          </div>
+
         </div>
         <div className={style.wrapBtn}>
           <p>Total price: <span>999</span> грн.</p>
