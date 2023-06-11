@@ -32,7 +32,7 @@ const ShopsPage = () => {
         {listRestaurants}
       </div>
       <div className={"containerProducts"}>
-        {nameRestaurant}
+        <h2 className={"nameRestaurant"}>{nameRestaurant}</h2>
         <div className={"wrapProducts"}>
           {products && products.map(item => <CardProduct idRestaurant={idRestaurant} {...item} />)}
 

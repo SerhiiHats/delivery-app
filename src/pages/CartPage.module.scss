@@ -27,10 +27,10 @@
         input {
           display: block;
           width: 80%;
-          height: 36px;
-          font-size: 12px;
+          height: $size * 3.6;
+          font-size: $size * 1.2;
           border-radius: 5px;
-          border: 1px solid $colorDefault4;
+          border: $size * 0.1 solid $colorDefault4;
         }
       }
     }
@@ -42,57 +42,77 @@
     flex-direction: column;
 
     .cart {
-      border: 1px solid $colorActive2;
+      border: $size * 0.1 solid $colorActive2;
       border-radius: 5px;
       min-height: 40vh;
       max-height: 65vh;
-      padding: $size * 2;
+      padding: $size * 2 $size * 2 $size $size * 2;
       overflow: auto;
 
-      .wrapProduct{
+      .emptyCart {
+        text-align: center;
+        color: $colorActive;
+        font-size: $size * 3;
+      }
+
+      .wrapProduct {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid $colorDefault;
+        border: $size * 0.1 solid $colorDefault;
         border-radius: 5px;
+        margin-bottom: $size;
 
-
-        .wrapImg{
+        .wrapImg {
           width: calc(100% / 2);
-          border: 1px solid $colorDefault;
           text-align: center;
-          padding: 10px 0;
+          padding: $size 0;
 
-          img{
+          img {
             width: 50%;
             border-radius: 5px;
-            //height: 100vh;
           }
         }
 
-        .wrapDescriptionProduct{
+        .wrapDescriptionProduct {
           width: calc(100% / 2 - 10px);
-          border: 1px solid $colorDefault;
 
-          .titleProduct{
+          .titleProduct {
             text-align: center;
           }
 
-          .priceProduct{
+          .priceProduct {
             text-align: center;
           }
 
-          .wrapTotalPrice{
+          .wrapTotalPrice {
             display: flex;
-            justify-content: space-between;
+            justify-content: right;
 
-            .wrapButton{
-              margin-left: 100px;
+
+            .wrapButton {
+
+              .btnCount {
+                width: $size * 3;
+                height: $size * 3;
+                border-radius: 5px;
+                border: none;
+                background-color: $colorActive4;
+              }
+
+              .quantity {
+                display: inline-block;
+                min-width: $size * 4;
+                text-align: center;
+              }
+            }
+
+            .totalPrice {
+              width: calc(100% / 2 - $size * 5);
+              text-align: right;
             }
           }
         }
-
-
       }
     }
 
@@ -107,7 +127,7 @@
         margin: 0;
         padding: 0;
         color: $colorActive;
-        font-size: 20px;
+        font-size: $size * 2;
       }
 
       button {
@@ -115,7 +135,7 @@
         padding: $size 0;
         background-color: $colorActive2;
         color: $colorWhite;
-        font-size: 16px;
+        font-size: $size * 1.6;
         border: none;
         border-radius: 5px;
         margin-left: $size * 18;

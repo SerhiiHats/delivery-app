@@ -2,7 +2,6 @@
 
 $widthContainerRestaurants: $size * 30;
 
-
 .shops {
   color: $colorActive2;
   padding: $size * 2;
@@ -56,13 +55,17 @@ $widthContainerRestaurants: $size * 30;
     border-radius: 25px;
     padding: $size;
     box-sizing: border-box;
+
+    .nameRestaurant {
+      text-align: center;
+      margin: 0;
+    }
   }
 
-  .wrapProducts{
+  .wrapProducts {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
   }
 }
 
