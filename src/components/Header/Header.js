@@ -8,6 +8,8 @@ const Header = () => {
       <NavLink to={"/"}>Shop</NavLink>
       <span className={"border"}></span>
       <NavLink to={"/cart"}>Shopping Cart</NavLink>
+      <span className={"border"}></span>
+      <NavLink to={"/createProduct"}>Create Product</NavLink>
     </header>
   );
 };
