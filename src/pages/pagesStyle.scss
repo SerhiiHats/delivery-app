@@ -30,8 +30,9 @@ $widthContainerRestaurants: $size * 30;
       transition: 0.2s;
 
       &:hover {
-        scale: 1.05;
+        //scale: 1.05;
         box-shadow: 0 0 7px 1px $colorDefault;
+        //background-color: $colorActive1;
       }
 
     }

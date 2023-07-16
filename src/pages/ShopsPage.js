@@ -34,7 +34,7 @@ const ShopsPage = () => {
       <div className={"containerProducts"}>
         <h2 className={"nameRestaurant"}>{nameRestaurant}</h2>
         <div className={"wrapProducts"}>
-          {products && products.map(item => <CardProduct idRestaurant={idRestaurant} {...item} />)}
+          {products && products.map(item => <CardProduct key={item.idProduct} idRestaurant={idRestaurant} {...item} />)}
 
          {/*{products && products.map(item => <CardProduct key={item.id} id={item.id}*/}
          {/*                                               src={require(`../assets/${item.image}`)} alt={item.title}*/}

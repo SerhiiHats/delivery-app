@@ -1,8 +1,12 @@
 import styles from "./CardProduct.module.scss"
+import {useDispatch} from "react-redux";
+import {setCountAC} from "./countAction";
 
 const CardProduct = (props) => {
 
   const {description, idProduct, image, price, title, idRestaurant} = props;
+
+  const dispatch = useDispatch();
 
   const imageSrc = require(`../../assets/${image}`);
   const userOrder = [{
@@ -18,6 +22,7 @@ const CardProduct = (props) => {
     if (!userOrderAppDelivery) {
       localStorage.setItem("userOrderAppDelivery", JSON.stringify(userOrder));
       const test5 = localStorage.getItem("userOrderAppDelivery");
+      dispatch(setCountAC(idProduct, 1));
       console.log(JSON.parse(test5))
       return;
     }
@@ -38,6 +43,7 @@ const CardProduct = (props) => {
       localStorage.setItem("userOrderAppDelivery", JSON.stringify(margeOfProduct));
     }
 
+    dispatch(setCountAC(idProduct, 1));
     const test1 = localStorage.getItem("userOrderAppDelivery");
     console.log(JSON.parse(test1))
   }

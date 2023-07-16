@@ -2,9 +2,13 @@ import React, {useEffect, useState} from 'react';
 import style from "./CartPage.module.scss"
 import useInput from "../components/hooks/useInput";
 import constBd from "../utils/constBd";
+import {useDispatch} from "react-redux";
+import {setCountAC} from "../components/CardProduct/countAction";
 
 const CartPage = () => {
   const userOrderAppDelivery = JSON.parse(localStorage.getItem("userOrderAppDelivery"));
+
+  const dispatch = useDispatch();
 
   const [order, setOrder] = useState(userOrderAppDelivery || []);
   const [products, setProducts] = useState(null);
@@ -38,6 +42,7 @@ const CartPage = () => {
       const tempProducts = order.filter(product => product.idProduct !== id);
       localStorage.setItem("userOrderAppDelivery", JSON.stringify(tempProducts));
       setOrder(JSON.parse(localStorage.getItem("userOrderAppDelivery")));
+      dispatch(setCountAC(id, k));
       return
     }
 
@@ -49,6 +54,7 @@ const CartPage = () => {
     })
     localStorage.setItem("userOrderAppDelivery", JSON.stringify(tempProducts));
     setOrder(JSON.parse(localStorage.getItem("userOrderAppDelivery")));
+    dispatch(setCountAC(id, k));
   }
 
   return (
