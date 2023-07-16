@@ -1,11 +1,14 @@
 import styles from "./CardProduct.module.scss"
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setCountAC} from "./countAction";
 
 const CardProduct = (props) => {
 
   const {description, idProduct, image, price, title, idRestaurant} = props;
 
+  const countItems = useSelector(store => store.quantityItems);
+
+  console.log(countItems)
   const dispatch = useDispatch();
 
   const imageSrc = require(`../../assets/${image}`);
@@ -64,8 +67,10 @@ const CardProduct = (props) => {
           {/*<button onClick={putToCart} className={quantity ? `${styles.btnAddCart} ${styles.btnInCart}`*/}
           {/*  : `${styles.btnAddCart}`}>{quantity ? "In the Cart" : "Add to Cart"}</button>*/}
 
-
-          <button onClick={() => putToCart()} className={styles.btnAddCart}>{"Add to Cart"}</button>
+          {countItems[idProduct] ?
+            <button onClick={() => putToCart()} className={styles.btnInCart}>{"In Cart"}<span className={styles.countProducts}>{countItems[idProduct]}</span></button>
+            : <button onClick={() => putToCart()} className={styles.btnAddCart}>{"Add to Cart"}</button>}
+          {/*<button onClick={() => putToCart()} className={styles.btnAddCart}>{"Add to Cart"}</button>*/}
         </div>
 
       </div>
